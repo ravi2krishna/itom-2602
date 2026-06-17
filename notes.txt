@@ -1,0 +1,222 @@
+Class - 1
+===========
+
+    -> Service Now is NOT just One Application, it's a platform that hosts Multiple Applications 
+
+        -> ITSM (Incident Management, Problem Management, Change Management etc)
+
+        -> HRSD (Employee Center, Employee Lifecycle etc)
+
+        -> ITOM (Discovery, Service Mapping, Event Management etc)
+
+        -> NOTE: We are going to focus on ITOM Module 
+
+    
+    -> ITOM 
+
+        -> IT Operations Management is suite of Applications within Service Now 
+        helps organizations Discover, Map, Monitor and Manage their 
+        IT Infrastructure and Services.
+
+    
+    -> IT Infrastructure
+
+        -> The foundation layer (Hardware + Software) on which everything runs
+
+        -> Servers 
+
+            -> Physical Servers (Physical / On-premise Datacenters)
+
+            -> Virtual Machines (Virtualization Platforms VMWare, Hyper-V etc)
+
+            -> Cloud Servers / Instances (AWS EC2 Instance, Azure Virtual Machine etc) 
+
+        -> Networking 
+
+            -> Routers 
+
+            -> Switches 
+
+            -> Firewalls 
+
+            -> Load Balancers 
+
+            -> etc 
+
+    
+    -> IT Services
+
+        -> What the business actually used and delivers to customers 
+
+        -> Banking Services 
+
+        -> Ecommerce Services 
+
+        -> LMS Services 
+
+        -> Email Services 
+
+        -> etc 
+
+    
+    -> NOTE: To Power IT Services we need IT Infrastructure 
+
+
+    -> Banking Service Like HDFC 
+
+        -> https://www.hdfc.bank.in/
+
+            -> Net Banking
+
+            -> Credit Card Portal 
+
+                -> Name, Card Number, CVV, Expiry Date (Data)
+
+                    -> Where is Data ?? 
+
+                        -> Data is inside Database 
+
+                            -> Where is Database ?? 
+
+                                -> Database is inside Server 
+
+                                  -> Where is Server ??    
+
+                                    -> Server is inside Datacenter (On-premise or Cloud)
+
+
+            -> Loan Portal
+
+            -> Fast tag Portal
+
+            -> etc 
+
+
+    -> ITOM Bridges the gap between IT Infrastructure and Business Services
+    by providing Visibility, Automation and Control over entire IT Environment.
+
+        -> https://www.pan.utiitsl.com/panonline_ipg/forms/csfPan.html/csfPreForm
+
+    
+    -> Who should learn Service Now ITOM ? 
+
+        -> Service Now ITOM is best suited for professionals involved in 
+        IT Infrastructure, Cloud Operations, Monitoring, Automation and 
+        Enterprise IT Service Management.
+
+        -> It is especially valuable in large organizations that uses Service Now as their ITSM Platform
+
+    
+    -> Typical ITOM Career Path 
+
+        -> Help Desk Engineer 
+                | 
+        -> System Administration 
+                |
+        -> Cloud Engineer / Network Engineer 
+                |
+        -> ServiceNow ITOM Specialist 
+
+    
+
+    -> SNMP ?? 
+
+        -> Simple Network Management Protocol 
+
+            -> SNMP is a Protocol(Rules) for "Monitoring" and "Managing"
+            Network connected devices (Routers, Switches, Servers, IOT etc) in IP Networks.
+            It operates over UDP to track Network performance, detect faults and configure remote devices.
+
+            -> SNMP Port 161 / 162
+
+    -> HTTP/S ?? 
+
+        -> Hyper Text Transfer Protocol (Secured)
+
+            -> For "transmitting web data" over World Wide Web (WWW)
+
+                -> https://www.hdfc.bank.in/
+
+            -> HTTP/S Ports 80 / 443 
+
+
+    -> SSH ?? 
+
+        -> Secure Shell 
+
+            -> For Encrypted Communication between a Client & Server over Insecure Network 
+
+            -> Remote Logins 
+
+            -> SSH Port 22 
+
+
+    -> Main Concept Of ITOM 
+
+        -> https://www.servicenow.com/docs/r/it-operations-management/discovery/r-discovery.html
+
+
+    -> Modules / Key Concepts Of ITOM 
+
+        -> CMDB (Configuration Management Database)
+
+            -> The "Backbone" Of ServiceNow.
+            All Discovered Assets and their Relationships are 
+            stored here as Configuration Items (CI's) 
+
+        -> Configuration Items (CI's) 
+
+            -> Any IT Component that needs to be managed 
+            Server, Application, Router, Desktop etc 
+
+        -> Discovery 
+
+            -> The Process of Automatically Identifying and Populating 
+            CI's into the CMDB. Uses MID Server(Java Agent) to communicate 
+            with the Network(Datacenter).
+
+        -> MID Server (Management, Instrumentation & Discovery)
+
+            -> A Java based Application(Agent) installed Windows / Linux Machine
+            within your on-premise or cloud. 
+
+            -> MID Server acts as a Bridge between ServiceNow and target Infrastructure  
+        
+        
+        -> Service Mapping 
+
+            -> Creates a Map linking a Business Service(Ecommerce or Banking) 
+            to all of it's dependent Infrastructure Components. 
+
+            
+        -> Event Management 
+
+            -> Collects Alerts from External Monitoring Tools(Prometheus, Nagios etc) 
+            and correlates them into actionable events.
+
+
+
+    -> Roadmap (End To End Flow Of ITOM)        
+
+        -> Discovery 
+
+            -> Finds Infrastructure (CI)
+
+        -> CMDB Population 
+
+            -> Stores Data 
+
+        -> Service Mapping 
+
+            -> Builds Relationships 
+
+        -> Event Management 
+
+            -> Collects Alerts 
+
+        -> Incident Creation (ITSM)
+
+            -> Issues Assigned 
+
+
+

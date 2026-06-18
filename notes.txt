@@ -220,3 +220,166 @@ Class - 1
 
 
 
+Class - 2
+===========
+
+    -> ServiceNow ITOM Prerequisites 
+
+        -> Networking 
+
+        -> Linux / Windows Administration 
+
+        -> Cloud Computing (Azure or AWS)
+
+
+    
+    -> CMDB (Configuration Management Database)   
+
+        -> https://www.servicenow.com/in/products/it-operations-management/what-is-cmdb.html
+
+
+        -> A configuration management database (CMDB) is a centralized file that functions as a 
+        comprehensive data warehouse, organizing information about an IT environment. 
+        CMDB clarifies the relationships between hardware, software components, and 
+        networks for improved configuration management.
+
+        -> "CMDB" is Heart Of ServiceNow ITOM 
+
+        -> CMDB is ServiceNow's Master Inventory of everything in your IT Environment.
+
+            -> Every Server, Applications, Database, Network Components, Business Service 
+            all of these lives in CMDB as a record.
+
+        -> Use Case 
+
+            -> customer reports an email service is down 
+
+                -> Email Service is an CI 
+
+                -> Email Client Application is an CI 
+
+                -> Email Server (Hardware) is an CI 
+
+        
+        -> NOTE: Based on above scenario, CMDB answers questions like 
+        
+            -> What do we have 
+
+            -> Where they are 
+
+            -> How Does everything connect ?
+
+        -> NOTE: CMDB is the single source of truth for all of ITOM Process
+        
+
+        -> CMDB is a centralized repository that stores information about 
+        all your IT Assets(Configuration Items) and their relationships in your organization.
+
+
+
+    -> Configuration Items (CI's)
+
+        -> A Configuration Item in servicenow is a digital record within CMDB 
+        representing any IT Component such as server, Application, service etc. 
+
+        -> Configuration Items (CI's) are "Atoms Of CMDB"
+
+        -> CI's track Infrastructure details (Manufacturer, Vendor, Locations) to support(ITIL Process)
+
+
+    -> NO CMDB 
+
+        -> https://www.lansweeper.com/wp-content/uploads/2019/06/All-servers-by-type.png
+
+    -> With CMDB 
+
+        -> https://servicenowguru.com/wp-content/uploads/2024/05/bsmMap.jpg
+
+
+    -> Every Configuration Item (CI) has three things 
+
+        -> Class (What type of Asset it is)
+
+        -> Attributes (Properties)
+
+        -> Relationships (How it connects to other CI's)
+
+
+    -> Relationships  
+
+        -> Relationship in servicenow CMDB is a connection between 
+        multiple configuration Items, that defines 
+
+            -> How they interact with each other 
+
+            -> How they depend on each other 
+
+                -> Runs On 
+
+                -> Used By 
+
+                -> Depends On 
+
+                -> etc 
+
+            -> Runs On (An Application runs on a server)
+
+            -> Depends On (A Service Depends on an Application)
+
+            -> Connected By (A Server is connected by a Switch)
+
+        
+        -> NOTE: All relationships are Automatically Discovered using Discovery Process 
+
+
+
+    -> Memory Map for all above Concepts 
+
+        -> CMDB (Think of it as a City Map)
+
+        -> CI's (Buildings within the City - Unique Address, Color [Class & Attributes] )
+
+        -> Relationships (Roads Connecting Buildings) 
+
+        -> Discovery Process (Google Maps Vehicles, Keeps Maps Updated)
+
+        -> Service Mapping (Draws Routes between districts (Services))
+
+        -> Event Management (Monitors - Buildings on fire, sends an SOS to fire Department)
+
+    
+    -> Discovery 
+
+        -> MID Server 
+
+        -> Credentials 
+
+        -> Probes 
+
+        -> Sensors 
+
+        -> Patterns 
+
+        -> Discovery Schedules 
+
+
+    -> ServiceNow Discovery is an "Automated Process" that continuously scans and identifies 
+    all the components within IT Infrastructure abd relationships, there by writing all of it into CMDB.
+
+        -> ServiceNow Discovery plays crucial role for maintaining accurate and up to date information in CMDB 
+
+    -> NOTE: Discovery is not available out of the box
+
+    -> We need to install "Discovery" Plugin(com.snc.discovery) 
+    and enable to use discovery capabilities on the PDI.
+
+    -> NOTE: Not just Discovery, coming to Service Mapping and Event Management, 
+    none of the ITOm Features are available OOB(Out Of Box), we need to install 
+    all these plugins and configure them.
+
+
+
+
+
+
+

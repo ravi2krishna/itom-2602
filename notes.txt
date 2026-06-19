@@ -379,6 +379,71 @@ Class - 2
 
 
 
+Class - 3
+===========
+
+    -> In ServiceNow Developer Instance, the CMDB is not a single page 
+    it's a set of tables.
+
+    -> NOTE: 
+
+        Where You Look              Relationship Type               Meaning 
+
+        From Application CI         Runs On                         Application Runs On the Server 
+
+        From Linux Server CI        Runs (Application)              Server Runs the Application 
+
+
+    -> ServiceNow Discovery (Automated CI Population for CMDB)
+
+        -> How ServiceNow Discovery Works - Step By Step
+
+            -> Step - 1
+            
+                -> Schedule & Trigger 
+
+                    -> Define IP Ranges (10.0.0.99/32) -> Only One Address / Device
+
+                    -> Define IP Ranges (10.0.0.0/20) -> 4096 Address / Device
+
+                    -> Define IP Ranges (10.0.0.0/24) -> 256 Address / Device
+
+                    -> Define Schedule 
+
+                        -> Discovery Runs Automatically Every 24 Hours 
+
+                        -> Run Discovery On Demand when needed 
+
+            -> Step - 2
+
+                -> Scan the network 
+
+                    -> MID Server Probes the Given Network using 
+                    SNMP, WMI, SSH to find devices 
+
+            
+            -> Step - 3
+
+                -> Classify & Identify 
+
+                    -> Probes Collect All Info Like 
+                    OS, Hardware, Software etc 
+
+                    -> Sensors Classify Each Type 
+
+            -> Step - 4 
+
+                -> Populate CMDB 
+
+                    -> CI's are Created or Updated in the CMDB 
+
+                    -> Relationships between assets are mapped Automatically
+
+        -> NOTE:
+
+            -> Discovery = Zero Manual Data Entry for Infrastructure CI's 
+
+                -> No Spreadsheets - No Stale Data - CMDB Stays accurate Automatically - Every Scan updates what's changed 
 
 
 

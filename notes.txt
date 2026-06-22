@@ -447,4 +447,201 @@ Class - 3
 
 
 
+Class - 4
+===========
+
+    -> Architecture 
+
+        -> Schedule -> Mid Server -> Credentials -> Probes -> Sensors -> Patterns -> Classification 
+
+    
+    -> MID Server
+
+        -> M - Management 
+
+        -> I - Instrumentation 
+
+        -> D - Discovery 
+
+
+            -> M - Management 
+
+                -> MID Server Manages Communication between "ServiceNow Instance" and "Your IT Infrastructure"
+
+            -> I - Instrumentation 
+
+                -> Read Pulse Of Every Device in your Infrastructure 
+
+                -> Like A Doctor checks Vitals Using Instruments 
+
+                -> Collects Data Like OS Type, IP, Softwares Installed, Running Processes etc 
+
+            -> D - Discovery 
+
+                -> Finds things nobody manually told ServiceNow about 
+                
+                -> MID Server Scans IP Ranges and finds the devices Automatically 
+
+                -> No Human Intervention Required 
+
+        -> Most Popular Applications 
+
+            -> https://en.wikipedia.org/wiki/Programming_languages_used_in_most_popular_websites
+
+
+        -> NOTE: Real World Infrastructure Looks Like 
+
+            -> https://media.licdn.com/dms/image/v2/D4D12AQFI8sqvP4xFFQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1700537758681?e=2147483647&v=beta&t=zE97TFGw5FQJEjUksqx7SohNsqqV57-IYQ_pj7K2M2U
+
+        -> MID Server Appears as a record in "ecc_agent" table 
+
+
+    -> Credentials 
+
+        -> Once the MID Server reaches your devices on the network, it needs to 
+        log into Servers(Web Servers, App Servers, Database Servers, Caching Servers etc) 
+        to interrogate them, that's what Credentials are used for. 
+
+        -> Credentials are Authentication Secrets, stored securely in ServiceNow 
+        and MID Server uses these Credentials to access devices.
+
+        -> Credentials are stored in "discovery_credentials" table.
+
+        -> Credentials are never sent in plan text format, they are "Encrypted" using ServiceNow Encryption. 
+
+        -> MID Server receives Encrypted Credentials and decrypts it locally at moment of use 
+
+        -> There are several types of Credentials 
+
+            -> SSH Credentials are used in Linux & Unix Environments 
+
+                -> SSH Credentials are made up of 
+
+                    -> Username
+                    -> Public Key 
+                    -> Private Key 
+
+                -> Uses Password less Authentication (Way Secure then Password based Authentication)
+
+
+            -> Windows Credentials are made up of Username & Password 
+
+            -> JDBC Credentials (Database Authentication)
+
+            -> VM Ware (VM Ware Credentials)
+
+            -> Cloud Infrastructure Like AWS, Azure etc use API Keys & Tokens 
+
+
+
+    -> Probes & Sensors
+
+        -> Probes & Sensors are two halves of Same Job.
+
+        
+        -> Probes
+
+            -> A Probe Is a Question 
+
+                -> It's a Script / Command that MID Server executes against target devices to collect RAW Data 
+
+                -> It Runs on MID Server Side, Reaches to the target device and brings back all the 
+                raw output like commands, XML, JSON Data, WMI Queries etc  
+
+                -> The raw output will be stored at ServiceNow side inside 
+                ECC Queue (External Communication Channel)
+
+       
+        -> Sensors 
+
+            -> A Sensor Is an Answer          
+
+                -> It's a Script(javascript) that takes raw output from the Probe 
+                and pareses it, extracting fields like OS, IP, Hostname, Ports etc 
+                and maps them to CI Attributes, updating as records in CMDB.
+
+
+        -> Detective Story 
+
+            -> Detective Assistant / Probe 
+
+                -> Goes to the Crime Scene, takes photos, lift fingerprints, collects samples etc 
+                collection of raw evidence 
+
+                -> ITOM: Probes Runs Scripts, Collects Data 
+
+            
+            -> Bag Of evidence / ECC Queue 
+
+                -> Bag of evidence contains full of unprocessed raw evidence items 
+
+                -> ITOM: Raw Data Collected i.e unprocessed data 
+
+            -> Detective / Sensor 
+
+                -> Detective sits at desk, opens the bag of evidence, 
+                examines each item, then extracts meaning of these items 
+                and finally writes case report 
+
+                -> ITOM: Extracts data from ECC Queue and gives meaningful fields 
+                like OS, IP, Hostname, Ports etc 
+
+
+        -> NOTE 
+
+            ServiceNow Says -> Go Discover this IP 
+                        |
+            MID Server Sends PROBE -> Runs Scripts on target device
+                        |
+            Raw data drops into ECC Queue (ecc_queue table)
+                        |
+            Sensor picks it up -> Reads, Parses & Extracts 
+                        |
+            CMDB Gets Updated With NEW / UPDATES CI Records
+
+
+    
+    -> Patterns
+
+        -> Patterns are ServiceNow's Modern Replacement for Older Probes/Sensors 
+        approach for Applications and Software Discovery 
+
+        -> Still Proves and Sensors are heavily used for Infrastructure
+        (OS, IP, Hardware like CPU, MEMORY, DISK etc)
+
+        -> NOTE: Patterns are preferred method for Discovering Applications & Softwares 
+
+        -> A Pattern is a Declarative Definition, Unlike Imperative Definition Of Probes & Sensors.
+
+        -> Imperative Definition means "HOW TO DO"
+
+        -> Declarative Definition means "WHAT TO DO"
+
+        -> NOTE: Patterns are written in Visual Designer in ServiceNow (Pattern Designer)
+        rather then raw javascript 
+
+    
+
+    -> Classification
+
+        -> CI Classification is the final step, the "Classifier Engine" or "Decision Engine"
+        determines what CI Class to create and whether to create a new CI or update existing CI
+        
+        -> When a Sensor or Pattern finished parsing data from devices, it hands over 
+        raw attributes to CI Classifier Engine 
+
+        -> The Classifier's Job is to look at those attributes and answer two questions 
+
+            -> What Type Of CI is this ? 
+
+            -> Does it already exist in the CMDB ? 
+
+        
+        -> NOTE: Classifier Engine == Identification Rules 
+
+        -> Identification / Reconciliation 
+
+            -> Identification Rules for matching configuration items before insert/update (adding/updating)
+
+            
 

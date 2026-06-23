@@ -644,4 +644,117 @@ Class - 4
             -> Identification Rules for matching configuration items before insert/update (adding/updating)
 
             
+Class - 5
+===========
 
+    -> IRE (Identification and Reconciliation Engine )
+
+        -> IRE is underlying ServiceNow Engine that uses identifier rules 
+
+            -> Each class has a defined set of "identifier fields" that together makes a CI Unique 
+
+            -> "Criterion Attributes" these are like "Unique fingerprints" of a CI 
+
+        -> For a web server like Apache, the combination of  
+        sys_class_name + config_file + version
+
+        -> For a Docker Container, container_id is the unique identifier 
+
+        -> Simple Analogy 
+
+            -> Think of IRE like an Hospital Reception Desk 
+
+                -> Patient Walks In (Discovery Finds a device)
+
+                -> Receptionist asks: Have you been here before ?
+
+                    -> YES: Pull Exiting File, and update it (Reconciliation)
+
+                    -> NO: Create a new patient file (New CI Created)
+
+        -> Discovery Finds Device 
+
+        -> Patterns/Sensors collects Attributes 
+
+        -> IRE receives Attributes 
+
+            What type is this CI <- CI Classification 
+
+            Does this CI already exist ? <- Identification
+
+                YES                         NO
+            Update CI                   Create CI
+            (Reconciliation)            (New Record)
+
+
+
+    -> Master LAB Environment 
+
+        -> Infrastructure 
+
+            -> Cloud Infrastructure / Physical Infrastructure / VM Ware 
+
+            -> Access To Infrastructure is must for doing following labs 
+
+            -> At least Allocate 2 CPU's for your MID Server 
+
+            -> 4 GB / 8 GB RAM (Recommended)
+
+            -> HHD: Minimum 50 GB HDD Space should be available in your C Drive 
+
+            -> Good Network 
+
+        
+        -> Software
+
+            -> System Software OS (Windows) 
+
+            -> Install Java Version 21 (LTS)
+
+            -> Verify Java Installation 
+
+                -> java -version 
+
+        
+        -> ServiceNow PDI 
+
+            -> Create a service account for MID Server 
+
+                -> NOTE: Mid servers needs a dedicated user, Never use admin user 
+
+
+    -> NOTE: Setup Infrastructure On Cloud as we have free trails from Cloud 
+
+        -> AWS - https://aws.amazon.com/free/
+
+        -> AZURE - https://azure.microsoft.com/en-us/pricing/purchase-options/azure-account 
+
+    
+    
+    -> Once Server / Virtual Machine is created 
+
+    -> Login To Server / Virtual Machine 
+
+    -> Open Command Prompt 
+
+        -> java -version 
+
+    -> Install Java From 
+
+        -> https://www.oracle.com/java/technologies/downloads/
+
+        -> java -version 
+
+    -> ServiceNow PDI 
+
+        -> Create an user/account for MID Server 
+
+        -> NOTE: Mid servers needs a dedicated user, Never use admin user 
+
+            -> gfKbS7I6wesWtYHcfgX8Elx@KwG)+[a^<MHGUTihPF{6ka@m2>VH8G^b_s+E_6Gr5?ARaS.i+9lS[9sK,
+
+        -> Once User is created, Assign the Permissions i.e Roles 
+
+            -> No Roles by default i.e No Permissions
+
+            -> Add mid_server role to user created 

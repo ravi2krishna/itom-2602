@@ -767,3 +767,82 @@ Class - 6
 
     -> Discovery Setup 
 
+
+Class - 7
+===========
+
+    -> We Have Installed Mid Server 
+
+    -> Install Discovery Plugin 
+
+    -> Discovery Features are Enabled 
+
+    -> MID Servers Section In PDI 
+
+    -> We have Updated Service Now PDI Details 
+
+        -> URL 
+        -> Username 
+        -> Password 
+
+    -> MID Server Agent Appeared in the ServiceNow PDI 
+
+    -> To Perform Discovery We need Credentials 
+
+    -> As we have used windows machine to test the discovery we have 
+    updated the windows credentials 
+
+    -> Started Discovery 
+
+        -> We have provided target machine IP 
+        -> Mid Server To Use 
+    
+    -> Once Discovery is completed, we have the Computer Details Updated in CMDB 
+
+
+
+    -> Discovery With Multiple Servers 
+
+        -> When we setup Multiple instances they will part of a network 
+
+        -> We need to understand some Networking Concepts like Subnetting 
+
+        -> 10.0.0.0/20 - Finance Servers 
+
+            -> 4096 Addresses - 1 IP For Device 
+
+            -> 10.0.0.0 
+            -> 10.0.0.1 
+            -> 10.0.0.2
+            .
+            .
+            .
+            -> 10.0.0.255 
+            -> 10.0.1.0
+            -> 10.0.1.1
+            -> 10.0.1.2
+            .
+            .
+            -> 10.0.1.255
+            -> 10.0.2.0
+            -> 10.0.2.1
+            .
+            .
+            -> 10.0.2.255
+            -> 10.0.3.255
+            -> 10.0.4.255
+            .
+            .
+            .
+            .
+            -> 10.0.15.255
+
+            -> Finance Servers Range is 10.0.0.0 - 10.0.15.255 (4096)
+
+
+
+        -> 10.0.0.0/24 - HR Servers 
+        
+            -> HR Servers Range is 10.0.0.0 - 10.0.0.255 (256)
+
+

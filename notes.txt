@@ -758,3 +758,12 @@ Class - 5
             -> No Roles by default i.e No Permissions
 
             -> Add mid_server role to user created 
+
+
+Class - 6
+===========
+
+    -> Mid Server Setup Continued 
+
+    -> Discovery Setup 
+

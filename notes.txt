@@ -846,3 +846,144 @@ Class - 7
             -> HR Servers Range is 10.0.0.0 - 10.0.0.255 (256)
 
 
+Class - 8
+===========
+
+    -> Service Mapping 
+
+        -> https://www.servicenow.com/in/products/it-operations-management/what-is-service-mapping.html
+
+        -> Service mapping charts a company’s interconnected IT environment. 
+        This allows organizations to build a service-aware view of 
+        how their underlying IT applications and related 
+        components connect to business services.
+
+        -> NOTE: Service mapping is a way of more clearly 
+        understanding application services.
+
+
+    -> Application Service 
+
+        -> An application service is defined as a group of connected applications 
+        and hosts configured to operate together, to provide a specific service 
+        to an organization or end-user.
+
+        -> Traditionally, IT departments have relied on 
+        horizontal discovery to map IT infrastructures.
+
+        -> This delivery method creates inventories that act as though 
+        every application and device is standalone, without making note 
+        of the connections between devices and application services.
+
+        -> Service mapping forgoes this outdated approach, 
+        relying instead on top-down mapping that focuses on the 
+        connections between devices and applications so that any 
+        issues or changes can be immediately identified along 
+        with their impact on the rest of the application service.
+
+        -> https://media.licdn.com/dms/image/v2/D5612AQFTabVd6lwPNw/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1675397958842?e=2147483647&v=beta&t=yN3OPRI6JCxvBOLTsW72W3ZQpjN1uDWIztrEgpI-FrU
+
+
+        -> https://www.servicenow.com/docs/r/zurich/it-operations-management/service-mapping/service-mapping-get-started.html
+
+        -> Typically, IT departments create and maintain an inventory that 
+        treats devices and applications as standalone, independent objects. 
+        Connections between the devices and applications are not included. 
+        This is usually referred to as horizontal discovery.
+
+        -> Service Mapping maps dependencies, based on a connection between devices 
+        and applications. This method is referred to as top-down mapping. 
+        The top-down mapping helps you immediately see the impact of a 
+        problematic object on the rest of the service instance operation.
+
+        -> https://www.servicenow.com/docs/api/khub/maps/guxhDnVk8OUAJKLm7WZsYA/resources/9uEv1ID3zPqCzqimr6wCPw-guxhDnVk8OUAJKLm7WZsYA/content?v=653a9edca34cf51b&Ft-Calling-App=ft/turnkey-portal
+
+    
+    -> NOTE: Discovery Sees "What Exists"
+
+    -> NOTE: Service Mapping Sees "How things talk to each other"
+
+    -> 1st Phase 
+
+        -> Service Discovery - Horizontal Discovery - Bottom Up 
+
+            -> Linux Server 
+
+                -> Linux Server CI in CMDB 
+
+    
+    -> 2nd Phase 
+
+        -> Service Mapping - Vertical Discovery - Top Down
+
+            -> NOTE: On top of above Linux Server will setup some Application Service 
+
+                -> Hosting Some Ecommerce Solution (Business Service)
+
+            
+    -> Top Down vs Bottom Up 
+
+        -> Top Down 
+
+            -> Start From Business Service 
+
+                -> Business Service (Ecommerce Service - myntra.com) (URL)
+
+                        | 
+                Web Server Service 
+
+                        |
+
+                Installed On Linux Server 
+
+        
+        -> Bottom Up 
+
+            -> Scan IP's 
+
+            -> Find Servers 
+
+            -> Servers Connected To Which Disks 
+
+            -> Servers Connected To Which NIC's 
+
+
+    -> LAB Scenario 
+
+        -> Horizontal Discovery 
+
+            -> MID Server Scans IP 
+
+            -> Finds the Components Of Servers and Add them to CMDB 
+
+        
+        -> Service Mapping 
+
+            -> Patterns Will be used to detect Application Services 
+
+            -> Then We can form Business Service Map Connecting Business To Hardware
+
+
+        -> WEB SERVER - A web server is computer software [ APACHE HTTP Server ] 
+        and underlying hardware  [ AWS EC2 / Azure VM  ] that accepts requests via HTTP/S 
+        to distribute web content.
+
+        -> https://media.geeksforgeeks.org/wp-content/uploads/20190927155217/webserver.png
+
+
+        -> Service Mapping is not available out of the box, we need to install Plugin 
+
+
+        -> Service Mapping i.e Top Down 
+
+            -> Start From Business Service (Ecommerce Business)
+
+                -> ASKS: What does this service need to work ? 
+
+                    -> Maps everything it depends on 
+
+                        -> As we are using Ecommerce Business which is an 
+                        web application, it needs DNS Service (Domain Name)
+
+                        
+

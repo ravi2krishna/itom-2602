@@ -987,3 +987,53 @@ Class - 8
 
                         
 
+
+Class - 9
+===========
+
+    -> Continued With Service Mapping Lab 
+
+    -> Setup Ecommerce Business Service 
+
+        -> Application Code - https://github.com/ravi2krishna/ecomm.git 
+
+    -> Hosting Ecommerce Business On Apache Web Server 
+
+        -> Document Root: Place Where Application Code Should Be Kept 
+        /var/www/html 
+
+        -> Use "git" client to fetch the code from GitHub 
+
+        -> Cloning i.e making a copy of your application on server 
+
+            -> sudo git clone <url> <path> 
+
+            -> sudo git clone https://github.com/ravi2krishna/ecomm.git /var/www/html  
+
+                -> fatal: destination path '/var/www/html' already exists and is not an empty directory.
+
+            -> Clean Up Existing Application Data 
+
+                -> sudo rm -r /var/www/html/* 
+            
+            -> sudo git clone https://github.com/ravi2krishna/ecomm.git /var/www/html  
+
+    
+    -> Look Into Following For Next Class (Event Management Monitoring)
+
+        -> Prometheus (Monitoring Tool)
+
+        -> Alert Manager (Alerting Tool)
+
+        -> Integrate Above To Service Now 
+
+        -> Web Hooks (DevOps)
+
+        -> Python Script 
+
+        -> All these needs to be Integrated To Get the Alerts Flowing Into Service Now 
+
+
+
+
+
